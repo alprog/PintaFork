@@ -155,13 +155,14 @@ namespace Pinta.Core
 
 			toolbar.AppendItem (cursor);
 
-			PintaCore.Chrome.LastCanvasCursorPointChanged += delegate {
-				Gdk.Point pt = PintaCore.Chrome.LastCanvasCursorPoint;
-				cursor.Text = string.Format ("  {0}, {1}", pt.X, pt.Y);
-			};
+            PintaCore.Chrome.LastCanvasCursorPointChanged += delegate {
+                var size = PintaCore.Workspace.ActiveDocument.ImageSize;
+                Gdk.Point pt = PintaCore.Chrome.LastCanvasCursorPoint;
+                cursor.Text = string.Format("  {0}, {1}", pt.X, size.Height - pt.Y);
+            };
 
 
-			toolbar.AppendItem(new SeparatorToolItem());
+            toolbar.AppendItem(new SeparatorToolItem());
 			toolbar.AppendItem(new ToolBarImage("Tools.RectangleSelect.png"));
 
 			ToolBarLabel SelectionSize = new ToolBarLabel("  0, 0");
