@@ -16,4 +16,6 @@ The reason of the project is to keep classic UI but bring small additional featu
 - Build and run Visual Studio solution normally
 - Associate your files with bin/Pinta.exe 
 
+## Original Readme
+
 Read [Original Readme](./README.md) for more info
